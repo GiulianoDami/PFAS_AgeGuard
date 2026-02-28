@@ -1,0 +1,37 @@
+{
+    "language": "Rust",
+    "dependency_file": "Cargo.toml",
+    "dependencies": ["csv", "serde", "serde_json"],
+    "files": [
+        {
+            "path": "src/main.rs",
+            "description": "Entry point and CLI argument parsing",
+            "exports": ["fn main()", "fn parse_args()"]
+        },
+        {
+            "path": "src/analyzer.rs",
+            "description": "Core logic for analyzing PFAS data and calculating aging risk scores",
+            "exports": ["struct Analyzer", "fn new_analyzer()", "fn analyze_data()"]
+        },
+        {
+            "path": "src/models.rs",
+            "description": "Data structures for input/output data types",
+            "exports": ["struct PfasSample", "struct RiskReport", "enum RiskCategory"]
+        },
+        {
+            "path": "src/io_handler.rs",
+            "description": "Input/output operations including CSV reading/writing and file handling",
+            "exports": ["fn read_csv()", "fn write_report()", "fn validate_input()"]
+        },
+        {
+            "path": "src/calculator.rs",
+            "description": "Mathematical calculations for aging risk scoring based on PFAS levels",
+            "exports": ["fn calculate_risk_score()", "fn classify_risk_category()"]
+        },
+        {
+            "path": "src/cli.rs",
+            "description": "Command line interface definitions and usage help messages",
+            "exports": ["fn print_usage()", "fn setup_cli()"]
+        }
+    ]
+}
